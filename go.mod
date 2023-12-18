@@ -9,6 +9,8 @@ require (
 )
 
 require (
+	github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231218105312-6a5494097649 // indirect
+	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
 	github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a // indirect
 	github.com/jackc/pgx/v5 v5.4.3 // indirect
@@ -17,6 +19,10 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	golang.org/x/crypto v0.16.0 // indirect
+	golang.org/x/net v0.19.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20231212172506-995d672761c0 // indirect
+	google.golang.org/grpc v1.60.0 // indirect
+	google.golang.org/protobuf v1.31.0 // indirect
 )
 
 require (
