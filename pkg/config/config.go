@@ -10,13 +10,21 @@ type DBConfig struct {
 	Paswword string `mapstructure:"password"`
 }
 
+type AWSConfig struct {
+	Region    string `mapstructure:"aws-region"`
+	AccessKey string `mapstructure:"aws-access-key"`
+	SecretKey string `mapstructure:"aws-secret-key"`
+	Bucket    string `mapstructure:"bucket"`
+}
+
 type Port struct {
 	SvcPort string `mapstructure:"port"`
 }
 
 type Config struct {
-	Postgres DBConfig `mapstructure:"db"`
-	Port     Port     `mapstructure:"svc-port"`
+	Postgres DBConfig  `mapstructure:"db"`
+	Port     Port      `mapstructure:"svc-port"`
+	AWS      AWSConfig `mapstructure:"aws"`
 }
 
 var config Config
@@ -38,3 +46,6 @@ func LoadConfig() (Config, error) {
 	return config, nil
 }
 
+func GetAWSBucket() string {
+	return config.AWS.Bucket
+}

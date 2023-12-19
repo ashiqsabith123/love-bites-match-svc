@@ -5,6 +5,7 @@ import (
 	"log"
 
 	"github.com/ashiqsabith123/user-details-svc/pkg/config"
+	"github.com/ashiqsabith123/user-details-svc/pkg/domain"
 	"github.com/ashiqsabith123/user-details-svc/pkg/helper"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -20,7 +21,7 @@ func ConnectToDatabase(config config.Config) *gorm.DB {
 	}
 
 	db.AutoMigrate(
-	//domain.UserPhotos{},
+		domain.UserPhotos{},
 	)
 
 	fmt.Println(helper.Green("Database connected succesfully...."))

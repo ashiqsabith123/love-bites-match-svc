@@ -12,6 +12,7 @@ import (
 	"github.com/ashiqsabith123/user-details-svc/pkg/repository"
 	"github.com/ashiqsabith123/user-details-svc/pkg/service"
 	"github.com/ashiqsabith123/user-details-svc/pkg/usecase"
+	"github.com/ashiqsabith123/user-details-svc/pkg/utils"
 )
 
 // Injectors from wire.go:
@@ -19,7 +20,8 @@ import (
 func IntializeService(config2 config.Config) service.UserService {
 	gormDB := db.ConnectToDatabase(config2)
 	userRepo := repository.NewUserRepo(gormDB)
-	userUsecase := usecase.NewUserUsecase(userRepo)
+	utilsUtils := utils.NewS3Client(config2)
+	userUsecase := usecase.NewUserUsecase(userRepo, utilsUtils)
 	userService := service.NewUserService(userUsecase)
 	return userService
 }
