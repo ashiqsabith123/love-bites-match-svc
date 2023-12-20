@@ -21,6 +21,8 @@ func NewUserUsecase(repo repo.UserRepo, utils utils.Utils) interfaces.UserUsecas
 	return &UserUsecase{UserRepo: repo, Utils: utils}
 }
 
+var i int
+
 func (U *UserUsecase) SaveAndUploadPhotos(stream pb.MatchService_UplaodPhotosServer) error {
 
 	var data []byte
@@ -45,17 +47,33 @@ func (U *UserUsecase) SaveAndUploadPhotos(stream pb.MatchService_UplaodPhotosSer
 
 		if req.LastChunk {
 
+			// dest, _ := os.Create("image" + fmt.Sprint(i) + ".jpeg")
+			// i++
+
+			// _, err := dest.Write(data)
+			// if err != nil {
+			// 	fmt.Println("errrrrrr", err)
+			// }
+
+			// err = dest.Close()
+			// if err != nil {
+			// 	fmt.Println("err", err)
+			// }
+
 			id := uuid.New()
 			imageId := id.String()
 
-			wg.Add(1)
-			go func() {
-				defer wg.Done()
-				err := U.Utils.UploadPhotos(imageId, data)
-				if err != nil {
-					ch <- err
-				}
-			}()
+			// wg.Add(1)
+			// go func() {
+			// 	defer wg.Done()
+			err = U.Utils.UploadPhotos(imageId, data)
+			if err != nil {
+				return err
+			}
+			// 	if err != nil {
+			// 		ch <- err
+			// 	}
+			// }()
 
 			photos.Photos = append(photos.Photos, imageId)
 			photos.UserID = req.UserID
