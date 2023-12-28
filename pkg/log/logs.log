@@ -1,0 +1,96 @@
+General Logger:	2023/12/28 10:17:49 database.go:26: Database connected succesfully....
+General Logger:	2023/12/28 10:17:49 main.go:80: Match Svc on :50052
+Error Logger:	2023/12/28 10:18:58 database.go:18: Failed to connect database - failed to connect to `host=localhos user=ashiq database=match_svc`: hostname resolving error (lookup localhos on 127.0.0.53:53: server misbehaving)
+General Logger:	2023/12/28 10:19:24 database.go:26: Database connected succesfully....
+General Logger:	2023/12/28 10:19:24 main.go:80: Match Svc listening on :50052
+General Logger:	2023/12/28 10:21:00 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 10:21:00 database.go:26: Database connected succesfully....
+General Logger:	2023/12/28 10:21:00 main.go:80: Match Svc listening on :50052
+General Logger:	2023/12/28 10:22:55 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 10:22:55 database.go:26: Database connected succesfully....
+General Logger:	2023/12/28 10:22:55 main.go:80: Match Svc listening on :50052
+General Logger:	2023/12/28 10:23:57 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 10:23:57 database.go:26: Database connected succesfully....
+General Logger:	2023/12/28 10:23:57 main.go:80: Match Svc listening on :50052
+Error Logger:	2023/12/28 10:24:02 user_usecase.go:69: Panic occured while uploading image :  <nil>
+Error Logger:	2023/12/28 10:24:02 user_usecase.go:69: Panic occured while uploading image :  <nil>
+Error Logger:	2023/12/28 10:24:02 user_usecase.go:69: Panic occured while uploading image :  <nil>
+Error Logger:	2023/12/28 10:24:02 user_usecase.go:69: Panic occured while uploading image :  <nil>
+General Logger:	2023/12/28 10:24:30 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 10:24:30 database.go:26: Database connected succesfully....
+General Logger:	2023/12/28 10:24:30 main.go:80: Match Svc listening on :50052
+Error Logger:	2023/12/28 10:24:35 user_usecase.go:69: Panic occured while uploading image :  send on closed channel
+Error Logger:	2023/12/28 10:24:35 user_usecase.go:69: Panic occured while uploading image :  send on closed channel
+Error Logger:	2023/12/28 10:24:35 user_usecase.go:69: Panic occured while uploading image :  send on closed channel
+Error Logger:	2023/12/28 10:24:35 user_usecase.go:69: Panic occured while uploading image :  send on closed channel
+General Logger:	2023/12/28 10:26:12 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 10:26:12 database.go:26: Database connected succesfully....
+General Logger:	2023/12/28 10:26:12 main.go:80: Match Svc listening on :50052
+Error Logger:	2023/12/28 10:26:16 user_usecase.go:69: Panic occured while uploading image :  send on closed channel
+Error Logger:	2023/12/28 10:26:16 user_usecase.go:69: Panic occured while uploading image :  send on closed channel
+Error Logger:	2023/12/28 10:26:16 user_usecase.go:69: Panic occured while uploading image :  send on closed channel
+Error Logger:	2023/12/28 10:26:16 user_usecase.go:69: Panic occured while uploading image :  send on closed channel
+Error Logger:	2023/12/28 10:26:16 user_usecase.go:99: Error ocured while inserting photo data to db ERROR: duplicate key value violates unique constraint "user_photos_user_id_key" (SQLSTATE 23505)
+General Logger:	2023/12/28 10:27:11 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 10:27:11 database.go:26: Database connected succesfully....
+General Logger:	2023/12/28 10:27:11 main.go:80: Match Svc listening on :50052
+General Logger:	2023/12/28 11:50:54 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 11:50:54 database.go:27: Database connected succesfully....
+General Logger:	2023/12/28 11:50:54 main.go:80: Match Svc listening on :50052
+General Logger:	2023/12/28 11:51:51 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 11:51:51 database.go:27: Database connected succesfully....
+General Logger:	2023/12/28 11:51:51 main.go:80: Match Svc listening on :50052
+General Logger:	2023/12/28 11:52:30 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 11:52:30 database.go:27: Database connected succesfully....
+General Logger:	2023/12/28 11:52:30 main.go:80: Match Svc listening on :50052
+General Logger:	2023/12/28 11:57:55 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 11:57:55 database.go:27: Database connected succesfully....
+General Logger:	2023/12/28 11:57:55 main.go:80: Match Svc listening on :50052
+General Logger:	2023/12/28 12:01:22 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 12:01:22 database.go:28: Database connected succesfully....
+General Logger:	2023/12/28 12:01:22 main.go:80: Match Svc listening on :50052
+General Logger:	2023/12/28 12:02:25 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 12:02:25 database.go:28: Database connected succesfully....
+General Logger:	2023/12/28 12:02:25 main.go:80: Match Svc listening on :50052
+General Logger:	2023/12/28 12:06:42 logger.go:21: 
+
+
+Application restarted ---------
+General Logger:	2023/12/28 12:06:42 database.go:28: Database connected succesfully....
+General Logger:	2023/12/28 12:06:42 main.go:80: Match Svc listening on :50052

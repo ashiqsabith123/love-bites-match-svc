@@ -39,11 +39,12 @@ func (S3 *S3Client) UploadPhotos(key string, image []byte) error {
 
 	uploader := manager.NewUploader(S3.client)
 
-	_, err := uploader.Upload(context.TODO(), &s3.PutObjectInput{
-		Bucket: aws.String(cred.GetAWSBucket()),
-		Key:    aws.String(key),
-		Body:   bytes.NewReader(image),
-		ACL:    "public-read",
+	_, err := uploader.Upload(context.Background(), &s3.PutObjectInput{
+		Bucket:      aws.String(cred.GetAWSBucket()),
+		Key:         aws.String(key),
+		Body:        bytes.NewReader(image),
+		ACL:         "public-read",
+		ContentType: aws.String("image/jpeg"),
 	})
 
 	if err != nil {

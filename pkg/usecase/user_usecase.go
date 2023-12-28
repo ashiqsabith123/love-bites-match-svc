@@ -6,6 +6,7 @@ import (
 
 	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
 	"github.com/ashiqsabith123/user-details-svc/pkg/domain"
+	logs "github.com/ashiqsabith123/user-details-svc/pkg/log"
 	repo "github.com/ashiqsabith123/user-details-svc/pkg/repository/interface"
 	interfaces "github.com/ashiqsabith123/user-details-svc/pkg/usecase/interface"
 	utils "github.com/ashiqsabith123/user-details-svc/pkg/utils/interface"
@@ -20,8 +21,6 @@ type UserUsecase struct {
 func NewUserUsecase(repo repo.UserRepo, utils utils.Utils) interfaces.UserUsecase {
 	return &UserUsecase{UserRepo: repo, Utils: utils}
 }
-
-var i int
 
 func (U *UserUsecase) SaveAndUploadPhotos(stream pb.MatchService_UplaodPhotosServer) error {
 
@@ -47,36 +46,25 @@ func (U *UserUsecase) SaveAndUploadPhotos(stream pb.MatchService_UplaodPhotosSer
 
 		if req.LastChunk {
 
-			// dest, _ := os.Create("image" + fmt.Sprint(i) + ".jpeg")
-			// i++
-
-			// _, err := dest.Write(data)
-			// if err != nil {
-			// 	fmt.Println("errrrrrr", err)
-			// }
-
-			// err = dest.Close()
-			// if err != nil {
-			// 	fmt.Println("err", err)
-			// }
-
 			id := uuid.New()
 			imageId := id.String()
 
-			// wg.Add(1)
-			// go func() {
-			// 	defer wg.Done()
-			err = U.Utils.UploadPhotos(imageId, data)
-			if err != nil {
-				return err
-			}
-			// 	if err != nil {
-			// 		ch <- err
-			// 	}
-			// }()
+			wg.Add(1)
+			go func(imageID string, imageData []byte) {
+				defer func() {
+					if r := recover(); r != nil {
+						logs.ErrLog.Println("Panic occured while uploading image : ", r)
+					}
+				}()
+				defer wg.Done()
+				err := U.Utils.UploadPhotos(imageID+".jpeg", imageData)
+				if err != nil {
+					ch <- err
+				}
+			}(imageId, data)
 
 			photos.Photos = append(photos.Photos, imageId)
-			photos.UserID = req.UserID
+			photos.UserID = uint(req.UserID)
 
 			data = nil
 
@@ -93,7 +81,7 @@ func (U *UserUsecase) SaveAndUploadPhotos(stream pb.MatchService_UplaodPhotosSer
 		}
 	}
 
-	err := U.UserRepo.SavePhotos(photos)
+	err := U.UserRepo.SavePhotosID(photos)
 
 	if err != nil {
 		return err
@@ -101,4 +89,16 @@ func (U *UserUsecase) SaveAndUploadPhotos(stream pb.MatchService_UplaodPhotosSer
 
 	return nil
 
+}
+
+func (U *UserUsecase) SaveUserPrefrences() error {
+
+	var userPreferences domain.UserPreferences
+
+	err := U.UserRepo.SaveUserPrefrences(userPreferences)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

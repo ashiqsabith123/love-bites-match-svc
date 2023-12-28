@@ -14,7 +14,19 @@ func NewUserRepo(db *gorm.DB) interfaces.UserRepo {
 	return &UserRepo{Postgres: db}
 }
 
-func (U *UserRepo) SavePhotos(data domain.UserPhotos) error {
+func (U *UserRepo) SavePhotosID(data domain.UserPhotos) error {
+
+	err := U.Postgres.Create(&data).Error
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+
+}
+
+func (U *UserRepo) SaveUserPrefrences(data domain.UserPreferences) error {
 
 	err := U.Postgres.Create(&data).Error
 
