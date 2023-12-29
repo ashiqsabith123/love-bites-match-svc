@@ -3,7 +3,7 @@ module github.com/ashiqsabith123/user-details-svc
 go 1.21.3
 
 require (
-	github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231218105312-6a5494097649
+	github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231229040617-32e597df45de
 	github.com/aws/aws-sdk-go v1.49.5
 	github.com/aws/aws-sdk-go-v2/config v1.26.1
 	github.com/aws/aws-sdk-go-v2/credentials v1.16.12
@@ -53,6 +53,7 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/google/wire v0.5.0
 	github.com/hashicorp/hcl v1.0.0 // indirect
+	github.com/jinzhu/copier v0.4.0
 	github.com/magiconair/properties v1.8.7 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/pelletier/go-toml/v2 v2.1.0 // indirect

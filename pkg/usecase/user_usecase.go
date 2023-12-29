@@ -6,11 +6,12 @@ import (
 
 	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
 	"github.com/ashiqsabith123/user-details-svc/pkg/domain"
-	logs "github.com/ashiqsabith123/user-details-svc/pkg/log"
+	logs "github.com/ashiqsabith123/love-bytes-proto/log"
 	repo "github.com/ashiqsabith123/user-details-svc/pkg/repository/interface"
 	interfaces "github.com/ashiqsabith123/user-details-svc/pkg/usecase/interface"
 	utils "github.com/ashiqsabith123/user-details-svc/pkg/utils/interface"
 	"github.com/google/uuid"
+	"github.com/jinzhu/copier"
 )
 
 type UserUsecase struct {
@@ -91,11 +92,15 @@ func (U *UserUsecase) SaveAndUploadPhotos(stream pb.MatchService_UplaodPhotosSer
 
 }
 
-func (U *UserUsecase) SaveUserPrefrences() error {
+func (U *UserUsecase) SaveUserPrefrences(req *pb.UserPrefrencesRequest) error {
 
 	var userPreferences domain.UserPreferences
+	err := copier.Copy(&userPreferences, req)
+	if err != nil {
+		return err
+	}
 
-	err := U.UserRepo.SaveUserPrefrences(userPreferences)
+	err = U.UserRepo.SaveUserPrefrences(userPreferences)
 	if err != nil {
 		return err
 	}

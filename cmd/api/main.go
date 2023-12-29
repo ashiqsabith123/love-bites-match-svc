@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"net"
 
+	logs "github.com/ashiqsabith123/love-bytes-proto/log"
 	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
 	"github.com/ashiqsabith123/user-details-svc/pkg/config"
 	"github.com/ashiqsabith123/user-details-svc/pkg/di"
 	"github.com/ashiqsabith123/user-details-svc/pkg/helper"
-	logs "github.com/ashiqsabith123/user-details-svc/pkg/log"
 	"google.golang.org/grpc"
 )
 
@@ -59,8 +59,9 @@ func StartService() {
 		logs.ErrLog.Fatalln(helper.Red("Error while loading config", err))
 	}
 
-	err = logs.InitLogger()
+	err = logs.InitLogger("./pkg/logs/log.log")
 	if err != nil {
+		fmt.Println(err)
 		logs.ErrLog.Fatalln(helper.Red("Error while initilizing logger", err))
 	}
 	service := di.IntializeService(config)

@@ -1,5 +1,13 @@
 github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231218105312-6a5494097649 h1:yhvzpJWqmHjJKkIDmZGJk5FiqYEi1qy1lTxCc73WiUI=
 github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231218105312-6a5494097649/go.mod h1:FDahrYqvMnat3GzBZs1QTRWTmt4xEG+I1jgU0SIrzjo=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231228064500-4810da67953f h1:ok3g236Rfnx5A54zKIBCKBduu8NBh+Nhpg8Lcs2uYLw=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231228064500-4810da67953f/go.mod h1:FDahrYqvMnat3GzBZs1QTRWTmt4xEG+I1jgU0SIrzjo=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231228135048-2f8dd928512b h1:bTFGUpozosXv7spIgONFIuy1r+0rjoOuT9MAwPgWHBY=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231228135048-2f8dd928512b/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231228140453-9dc11ff9e3b3 h1:7llZa07w54b7LDZ5ZnFJwwmXwGIUQBy1vNpXXzOPFbc=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231228140453-9dc11ff9e3b3/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231229040617-32e597df45de h1:ZdFr1TVC0gj3psZAxNClVhVjPs7I84OwKovJFZOMMEk=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20231229040617-32e597df45de/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
 github.com/aws/aws-sdk-go v1.49.5 h1:y2yfBlwjPDi3/sBVKeznYEdDy6wIhjA2L5NCBMLUIYA=
 github.com/aws/aws-sdk-go v1.49.5/go.mod h1:LF8svs817+Nz+DmiMQKTO3ubZ/6IaTpq3TjupRn3Eqk=
 github.com/aws/aws-sdk-go-v2 v1.24.0 h1:890+mqQ+hTpNuw0gGP6/4akolQkSToDJgHfQE7AwGuk=
@@ -70,6 +78,8 @@ github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a h1:bbPeKD0xmW/
 github.com/jackc/pgservicefile v0.0.0-20221227161230-091c0ba34f0a/go.mod h1:5TJZWKEWniPve33vlWYSoGYefn3gLQRzjfDlhSJ9ZKM=
 github.com/jackc/pgx/v5 v5.4.3 h1:cxFyXhxlvAifxnkKKdlxv8XqUf59tDlYjnV5YYfsJJY=
 github.com/jackc/pgx/v5 v5.4.3/go.mod h1:Ig06C2Vu0t5qXC60W8sqIthScaEnFvojjj9dSljmHRA=
+github.com/jinzhu/copier v0.4.0 h1:w3ciUoD19shMCRargcpm0cm91ytaBhDvuRpz1ODO/U8=
+github.com/jinzhu/copier v0.4.0/go.mod h1:DfbEm0FYsaqBcKcFuvmOZb218JkPGtvSHsKg8S8hyyg=
 github.com/jinzhu/inflection v1.0.0 h1:K317FqzuhWc8YvSVlFMCCUb36O/S9MCKRDI7QkRKD/E=
 github.com/jinzhu/inflection v1.0.0/go.mod h1:h+uFLlag+Qp1Va5pdKtLDYj+kHp5pxUVkryuEj+Srlc=
 github.com/jinzhu/now v1.1.5 h1:/o9tlHleP7gOFmsnYNz3RGnqzefHA47wQpKrrdTIwXQ=

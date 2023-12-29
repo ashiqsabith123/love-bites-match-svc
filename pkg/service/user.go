@@ -1,8 +1,10 @@
 package service
 
 import (
+	"context"
+
+	logs "github.com/ashiqsabith123/love-bytes-proto/log"
 	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
-	logs "github.com/ashiqsabith123/user-details-svc/pkg/log"
 	usecase "github.com/ashiqsabith123/user-details-svc/pkg/usecase/interface"
 	"google.golang.org/protobuf/types/known/anypb"
 )
@@ -31,9 +33,33 @@ func (U *UserService) UplaodPhotos(stream pb.MatchService_UplaodPhotosServer) er
 		})
 	}
 
+	logs.GenLog.Println("Photo upload succecsfully")
+
 	return stream.SendAndClose(&pb.MatchResponse{
-		Code:    200,
+		Code:    201,
 		Message: "photo upload succecsfully",
 	})
 
+}
+
+func (U *UserService) SaveUserPrefrences(ctx context.Context, req *pb.UserPrefrencesRequest) (*pb.MatchResponse, error) {
+
+	err := U.UserUsecase.SaveUserPrefrences(req)
+
+	if err != nil {
+		logs.ErrLog.Println("Error while saving user prefrences", err)
+		return &pb.MatchResponse{
+			Code:    500,
+			Message: "Server error",
+			Error: &anypb.Any{
+				Value: []byte(err.Error()),
+			},
+		}, nil
+	}
+
+	logs.GenLog.Println("User prefrences added succecsfully")
+	return &pb.MatchResponse{
+		Code:    201,
+		Message: "User prefrences added succecsfully",
+	}, nil
 }

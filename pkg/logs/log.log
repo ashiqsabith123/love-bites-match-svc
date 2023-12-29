@@ -1,0 +1,6 @@
+General Logger:	2023/12/29 09:46:33 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2023/12/29 09:46:33 database.go:28: Database connected succesfully....
+General Logger:	2023/12/29 09:46:33 main.go:81: Match Svc listening on :50052

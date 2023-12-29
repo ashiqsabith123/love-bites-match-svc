@@ -18,7 +18,7 @@ type UserPreferences struct {
 	Height        string     `gorm:"not null"`
 	MaritalStatus string     `gorm:"not null"`
 	Faith         string     `gorm:"not null"`
-	MotherTongue  string     `gorm:"not null"`
+	MotherTounge  string     `gorm:"not null"`
 	SmokeStatus   string     `gorm:"not null"`
 	AlcoholStatus string     `gorm:"not null"`
 	SettleStatus  string     `gorm:"not null"`
