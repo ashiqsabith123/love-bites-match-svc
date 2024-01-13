@@ -18,18 +18,20 @@ type AWSConfig struct {
 }
 
 type Port struct {
-	SvcPort string `mapstructure:"port"`
+	SvcPort string `mapstructure:"match-svc-port"`
+	AuthSvcPort  string `mapstructure:"auth-svc-port"`
 }
 
 type Config struct {
 	Postgres DBConfig  `mapstructure:"db"`
-	Port     Port      `mapstructure:"svc-port"`
+	Port     Port      `mapstructure:"ports"`
 	AWS      AWSConfig `mapstructure:"aws"`
 }
 
 var config Config
 
 func LoadConfig() (Config, error) {
+
 	vp := viper.New()
 	vp.SetConfigName("config")
 	vp.SetConfigType("json")

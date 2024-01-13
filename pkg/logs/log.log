@@ -1,6 +1,217 @@
-General Logger:	2023/12/29 09:46:33 logger.go:29: 
+General Logger:	2024/01/04 12:18:58 logger.go:29: 
 
 
 Application restarted ---------
-General Logger:	2023/12/29 09:46:33 database.go:28: Database connected succesfully....
-General Logger:	2023/12/29 09:46:33 main.go:81: Match Svc listening on :50052
+General Logger:	2024/01/04 12:18:58 database.go:28: Database connected succesfully....
+General Logger:	2024/01/04 12:18:58 main.go:88: Match Svc listening on :50052
+General Logger:	2024/01/04 12:19:25 user.go:36: Photo upload succecsfully
+General Logger:	2024/01/04 12:22:25 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/04 12:22:25 database.go:28: Database connected succesfully....
+General Logger:	2024/01/04 12:22:25 main.go:88: Match Svc listening on :50052
+General Logger:	2024/01/07 12:19:36 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/07 12:19:36 database.go:28: Database connected succesfully....
+General Logger:	2024/01/07 12:19:36 main.go:88: Match Svc listening on :50052
+General Logger:	2024/01/08 13:14:52 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/08 13:14:52 database.go:27: Database connected succesfully....
+General Logger:	2024/01/08 13:14:52 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/08 13:32:34 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/08 13:32:34 database.go:27: Database connected succesfully....
+General Logger:	2024/01/08 13:32:34 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/08 15:39:45 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/08 15:39:45 database.go:27: Database connected succesfully....
+General Logger:	2024/01/08 15:39:45 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/10 11:49:49 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/10 11:49:49 database.go:27: Database connected succesfully....
+General Logger:	2024/01/10 11:49:49 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/12 09:19:43 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/12 09:19:43 database.go:27: Database connected succesfully....
+General Logger:	2024/01/12 09:19:43 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/12 09:31:52 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/12 09:31:52 database.go:27: Database connected succesfully....
+General Logger:	2024/01/12 09:31:52 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/12 09:37:39 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/12 09:37:39 database.go:27: Database connected succesfully....
+General Logger:	2024/01/12 09:37:39 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/12 09:39:06 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/12 09:39:06 database.go:27: Database connected succesfully....
+General Logger:	2024/01/12 09:39:06 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/12 09:39:47 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/12 09:39:47 database.go:27: Database connected succesfully....
+General Logger:	2024/01/12 09:39:47 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/12 09:40:34 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/12 09:40:34 database.go:27: Database connected succesfully....
+General Logger:	2024/01/12 09:40:34 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/12 09:41:09 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/12 09:41:09 database.go:27: Database connected succesfully....
+General Logger:	2024/01/12 09:41:09 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/12 09:41:40 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/12 09:41:40 database.go:27: Database connected succesfully....
+General Logger:	2024/01/12 09:41:40 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/12 09:46:22 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/12 09:46:22 database.go:27: Database connected succesfully....
+General Logger:	2024/01/12 09:46:22 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/12 09:46:45 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/12 09:46:45 database.go:27: Database connected succesfully....
+General Logger:	2024/01/12 09:46:45 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/12 09:49:10 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/12 09:49:10 database.go:27: Database connected succesfully....
+General Logger:	2024/01/12 09:49:10 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 09:15:49 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 09:15:49 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 09:15:49 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 09:18:21 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 09:18:21 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 09:18:21 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 09:20:34 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 09:20:35 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 09:20:35 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 09:24:53 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 09:24:53 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 09:24:53 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 09:28:20 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 09:28:20 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 09:28:20 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 09:28:20 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 10:54:05 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 10:54:05 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 10:54:05 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 10:54:05 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 10:54:32 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 10:54:32 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 10:54:32 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 10:54:32 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 10:56:46 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 10:56:46 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 10:56:46 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 10:56:46 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 10:57:07 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 10:57:07 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 10:57:07 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 10:57:07 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 10:58:38 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 10:58:38 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 10:58:38 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 10:58:38 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 10:59:36 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 10:59:36 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 10:59:36 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 10:59:36 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 11:00:11 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 11:00:11 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 11:00:11 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 11:00:11 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 11:15:38 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 11:15:38 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 11:15:38 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 11:15:38 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 11:15:56 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 11:15:56 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 11:15:56 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 11:15:56 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 11:17:31 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 11:17:31 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 11:17:31 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 11:17:31 main.go:84: Match Svc listening on :50052
+General Logger:	2024/01/13 12:24:40 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/13 12:24:40 database.go:27: Database connected succesfully....
+General Logger:	2024/01/13 12:24:40 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/13 12:24:40 main.go:84: Match Svc listening on :50052

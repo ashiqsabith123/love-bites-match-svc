@@ -7,12 +7,13 @@
 package di
 
 import (
-	"github.com/ashiqsabith123/user-details-svc/pkg/config"
-	"github.com/ashiqsabith123/user-details-svc/pkg/db"
-	"github.com/ashiqsabith123/user-details-svc/pkg/repository"
-	"github.com/ashiqsabith123/user-details-svc/pkg/service"
-	"github.com/ashiqsabith123/user-details-svc/pkg/usecase"
-	"github.com/ashiqsabith123/user-details-svc/pkg/utils"
+	"github.com/ashiqsabith123/match-svc/pkg/clients/auth"
+	"github.com/ashiqsabith123/match-svc/pkg/config"
+	"github.com/ashiqsabith123/match-svc/pkg/db"
+	"github.com/ashiqsabith123/match-svc/pkg/repository"
+	"github.com/ashiqsabith123/match-svc/pkg/service"
+	"github.com/ashiqsabith123/match-svc/pkg/usecase"
+	"github.com/ashiqsabith123/match-svc/pkg/utils"
 )
 
 // Injectors from wire.go:
@@ -20,8 +21,9 @@ import (
 func IntializeService(config2 config.Config) service.UserService {
 	gormDB := db.ConnectToDatabase(config2)
 	userRepo := repository.NewUserRepo(gormDB)
-	utilsUtils := utils.NewS3Client(config2)
-	userUsecase := usecase.NewUserUsecase(userRepo, utilsUtils)
+	intrefacesUtils := utils.NewS3Client(config2)
+	authClient := auth.NewAuthClient(config2)
+	userUsecase := usecase.NewUserUsecase(userRepo, intrefacesUtils, authClient)
 	userService := service.NewUserService(userUsecase)
 	return userService
 }

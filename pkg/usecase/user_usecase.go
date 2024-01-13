@@ -1,26 +1,32 @@
 package usecase
 
 import (
+	"context"
+	"fmt"
 	"io"
 	"sync"
 
-	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
-	"github.com/ashiqsabith123/user-details-svc/pkg/domain"
+	authPb "github.com/ashiqsabith123/love-bytes-proto/auth/pb"
 	logs "github.com/ashiqsabith123/love-bytes-proto/log"
-	repo "github.com/ashiqsabith123/user-details-svc/pkg/repository/interface"
-	interfaces "github.com/ashiqsabith123/user-details-svc/pkg/usecase/interface"
-	utils "github.com/ashiqsabith123/user-details-svc/pkg/utils/interface"
+	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
+	authClient "github.com/ashiqsabith123/match-svc/pkg/clients/auth/interface"
+	"github.com/ashiqsabith123/match-svc/pkg/domain"
+	repo "github.com/ashiqsabith123/match-svc/pkg/repository/interface"
+	interfaces "github.com/ashiqsabith123/match-svc/pkg/usecase/interface"
+	utils "github.com/ashiqsabith123/match-svc/pkg/utils/interface"
 	"github.com/google/uuid"
 	"github.com/jinzhu/copier"
+	"google.golang.org/protobuf/proto"
 )
 
 type UserUsecase struct {
 	UserRepo repo.UserRepo
 	Utils    utils.Utils
+	Client   authPb.AuthServiceClient
 }
 
-func NewUserUsecase(repo repo.UserRepo, utils utils.Utils) interfaces.UserUsecase {
-	return &UserUsecase{UserRepo: repo, Utils: utils}
+func NewUserUsecase(repo repo.UserRepo, utils utils.Utils, client authClient.AuthClient) interfaces.UserUsecase {
+	return &UserUsecase{UserRepo: repo, Utils: utils, Client: client.GetClient()}
 }
 
 func (U *UserUsecase) SaveAndUploadPhotos(stream pb.MatchService_UplaodPhotosServer) error {
@@ -106,4 +112,47 @@ func (U *UserUsecase) SaveUserPrefrences(req *pb.UserPrefrencesRequest) error {
 	}
 
 	return nil
+}
+
+func (U *UserUsecase) FindMatches() error {
+
+	resp, err := U.Client.GetUserByID(context.TODO(), &authPb.UserIDRequest{UserID: 2})
+
+	if err != nil {
+		return err
+	}
+
+	var userData authPb.UserRepsonse
+
+	if resp.Data != nil {
+		if err := proto.Unmarshal(resp.Data.Value, &userData); err != nil {
+			return err
+		}
+	}
+
+	gender := "M"
+
+	if userData.Gender == "M" {
+		gender = "F"
+	}
+
+
+	resp, err = U.Client.GetUsersByGender(context.TODO(), &authPb.UserGenderRequest{Gender: gender})
+
+	if err != nil {
+		return err
+	}
+
+	var userDataByGender authPb.UserResponses
+
+	if resp.Data != nil {
+		if err := proto.Unmarshal(resp.Data.Value, &userDataByGender); err != nil {
+			return err
+		}
+	}
+
+	fmt.Println(userDataByGender.UserRepsonses)
+
+	return nil
+
 }

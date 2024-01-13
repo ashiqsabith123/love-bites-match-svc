@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"github.com/ashiqsabith123/user-details-svc/pkg/domain"
-	interfaces "github.com/ashiqsabith123/user-details-svc/pkg/repository/interface"
+	"github.com/ashiqsabith123/match-svc/pkg/domain"
+	interfaces "github.com/ashiqsabith123/match-svc/pkg/repository/interface"
 	"gorm.io/gorm"
 )
 

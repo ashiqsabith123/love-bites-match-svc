@@ -3,10 +3,9 @@ package db
 import (
 	"fmt"
 
-	"github.com/ashiqsabith123/user-details-svc/pkg/config"
-	"github.com/ashiqsabith123/user-details-svc/pkg/domain"
-
 	logs "github.com/ashiqsabith123/love-bytes-proto/log"
+	"github.com/ashiqsabith123/match-svc/pkg/config"
+	"github.com/ashiqsabith123/match-svc/pkg/domain"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

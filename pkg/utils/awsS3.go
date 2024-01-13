@@ -3,10 +3,11 @@ package utils
 import (
 	"bytes"
 	"context"
+	"fmt"
 	"log"
 
-	cred "github.com/ashiqsabith123/user-details-svc/pkg/config"
-	interfaces "github.com/ashiqsabith123/user-details-svc/pkg/utils/interface"
+	cred "github.com/ashiqsabith123/match-svc/pkg/config"
+	interfaces "github.com/ashiqsabith123/match-svc/pkg/utils/interface"
 	"github.com/aws/aws-sdk-go-v2/config"
 	"github.com/aws/aws-sdk-go-v2/credentials"
 	"github.com/aws/aws-sdk-go-v2/feature/s3/manager"
@@ -53,4 +54,10 @@ func (S3 *S3Client) UploadPhotos(key string, image []byte) error {
 
 	return nil
 
+}
+
+
+func (S3 *S3Client) Recover() {
+	r := recover()
+	fmt.Println(r)
 }

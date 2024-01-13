@@ -6,9 +6,9 @@ import (
 
 	logs "github.com/ashiqsabith123/love-bytes-proto/log"
 	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
-	"github.com/ashiqsabith123/user-details-svc/pkg/config"
-	"github.com/ashiqsabith123/user-details-svc/pkg/di"
-	"github.com/ashiqsabith123/user-details-svc/pkg/helper"
+	"github.com/ashiqsabith123/match-svc/pkg/config"
+	"github.com/ashiqsabith123/match-svc/pkg/di"
+	"github.com/ashiqsabith123/match-svc/pkg/helper"
 	"google.golang.org/grpc"
 )
 
@@ -53,6 +53,9 @@ func main() {
 }
 
 func StartService() {
+
+	defer Recover()
+
 	config, err := config.LoadConfig()
 
 	if err != nil {
@@ -88,4 +91,11 @@ func StartService() {
 		logs.ErrLog.Fatalln("grpc serve err:", err)
 	}
 
+}
+
+func Recover() {
+	r := recover()
+
+	fmt.Println("recovered from panic", r)
+	StartService()
 }

@@ -5,7 +5,7 @@ import (
 
 	logs "github.com/ashiqsabith123/love-bytes-proto/log"
 	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
-	usecase "github.com/ashiqsabith123/user-details-svc/pkg/usecase/interface"
+	usecase "github.com/ashiqsabith123/match-svc/pkg/usecase/interface"
 	"google.golang.org/protobuf/types/known/anypb"
 )
 
@@ -62,4 +62,10 @@ func (U *UserService) SaveUserPrefrences(ctx context.Context, req *pb.UserPrefre
 		Code:    201,
 		Message: "User prefrences added succecsfully",
 	}, nil
+}
+
+func (U *UserService) GetMatchedUsers(ctx context.Context, req *pb.UserIdRequest) (*pb.MatchedUsersResponse, error) {
+	U.UserUsecase.FindMatches()
+
+	return &pb.MatchedUsersResponse{}, nil
 }
