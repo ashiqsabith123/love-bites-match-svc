@@ -10,6 +10,10 @@ type DBConfig struct {
 	Paswword string `mapstructure:"password"`
 }
 
+type OpenAi struct {
+	Key string `mapstructure:"key"`
+}
+
 type AWSConfig struct {
 	Region    string `mapstructure:"aws-region"`
 	AccessKey string `mapstructure:"aws-access-key"`
@@ -18,14 +22,15 @@ type AWSConfig struct {
 }
 
 type Port struct {
-	SvcPort string `mapstructure:"match-svc-port"`
-	AuthSvcPort  string `mapstructure:"auth-svc-port"`
+	SvcPort     string `mapstructure:"match-svc-port"`
+	AuthSvcPort string `mapstructure:"auth-svc-port"`
 }
 
 type Config struct {
 	Postgres DBConfig  `mapstructure:"db"`
 	Port     Port      `mapstructure:"ports"`
 	AWS      AWSConfig `mapstructure:"aws"`
+	OpenAi   OpenAi    `mapstructure:"openai"`
 }
 
 var config Config

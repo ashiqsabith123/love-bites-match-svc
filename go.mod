@@ -52,7 +52,7 @@ require (
 )
 
 require (
-	github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240112045301-954c5e353213
+	github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240117090600-1012d8a6e78b
 	github.com/aws/aws-sdk-go v1.49.16
 	github.com/aws/aws-sdk-go-v2/config v1.26.3
 	github.com/aws/aws-sdk-go-v2/feature/s3/manager v1.15.11

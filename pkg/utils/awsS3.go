@@ -15,8 +15,9 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 )
 
-type S3Client struct {
+type Utils struct {
 	client *s3.Client
+	config cred.Config
 }
 
 func NewS3Client(awsConfig cred.Config) interfaces.Utils {
@@ -32,11 +33,11 @@ func NewS3Client(awsConfig cred.Config) interfaces.Utils {
 
 	client := s3.NewFromConfig(cfg)
 
-	return &S3Client{client: client}
+	return &Utils{client: client, config: awsConfig}
 
 }
 
-func (S3 *S3Client) UploadPhotos(key string, image []byte) error {
+func (S3 *Utils) UploadPhotos(key string, image []byte) error {
 
 	uploader := manager.NewUploader(S3.client)
 
@@ -56,8 +57,7 @@ func (S3 *S3Client) UploadPhotos(key string, image []byte) error {
 
 }
 
-
-func (S3 *S3Client) Recover() {
+func (S3 *Utils) Recover() {
 	r := recover()
 	fmt.Println(r)
 }

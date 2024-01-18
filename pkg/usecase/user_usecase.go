@@ -2,7 +2,6 @@ package usecase
 
 import (
 	"context"
-	"fmt"
 	"io"
 	"sync"
 
@@ -11,6 +10,7 @@ import (
 	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
 	authClient "github.com/ashiqsabith123/match-svc/pkg/clients/auth/interface"
 	"github.com/ashiqsabith123/match-svc/pkg/domain"
+	"github.com/ashiqsabith123/match-svc/pkg/helper/responses"
 	repo "github.com/ashiqsabith123/match-svc/pkg/repository/interface"
 	interfaces "github.com/ashiqsabith123/match-svc/pkg/usecase/interface"
 	utils "github.com/ashiqsabith123/match-svc/pkg/utils/interface"
@@ -114,19 +114,19 @@ func (U *UserUsecase) SaveUserPrefrences(req *pb.UserPrefrencesRequest) error {
 	return nil
 }
 
-func (U *UserUsecase) FindMatches() error {
+func (U *UserUsecase) FindMatches(req *pb.UserIdRequest) (responses.Result, error) {
 
-	resp, err := U.Client.GetUserByID(context.TODO(), &authPb.UserIDRequest{UserID: 2})
+	resp, err := U.Client.GetUserByID(context.TODO(), &authPb.UserIDRequest{UserID: req.UserID})
 
 	if err != nil {
-		return err
+		return responses.Result{}, err
 	}
 
 	var userData authPb.UserRepsonse
 
 	if resp.Data != nil {
 		if err := proto.Unmarshal(resp.Data.Value, &userData); err != nil {
-			return err
+			return responses.Result{}, err
 		}
 	}
 
@@ -136,23 +136,78 @@ func (U *UserUsecase) FindMatches() error {
 		gender = "F"
 	}
 
-
 	resp, err = U.Client.GetUsersByGender(context.TODO(), &authPb.UserGenderRequest{Gender: gender})
+
+	if err != nil {
+		return responses.Result{}, err
+	}
+
+	var usersDataByGender authPb.UserResponses
+
+	if resp.Data != nil {
+		if err := proto.Unmarshal(resp.Data.Value, &usersDataByGender); err != nil {
+			return responses.Result{}, err
+		}
+	}
+
+	userIDs := []int32{userData.UserID}
+
+	for _, v := range usersDataByGender.UserRepsonses {
+		userIDs = append(userIDs, v.UserID)
+	}
+
+	userPrefrences, err := U.UserRepo.GetUserPrefrencesByID(userIDs)
+	if err != nil {
+		return responses.Result{}, err
+	}
+
+	match, err := U.Utils.MakeMatchesByPrefrences(&userData, usersDataByGender.UserRepsonses, userPrefrences)
+
+	if err != nil {
+		return responses.Result{}, err
+	}
+
+	userIDs = []int32{}
+
+	for _, v := range match.Result {
+		userIDs = append(userIDs, int32(v.UserID))
+	}
+
+	userPhotos, err := U.UserRepo.GetUsersPhotosByID(userIDs)
+	if err != nil {
+		return responses.Result{}, err
+	}
+
+	for i, v := range match.Result {
+		for _, k := range userPhotos {
+			if v.UserID == k.UserID {
+				photo := make([]*pb.Images, len(k.Photos))
+
+				for i := 0; i < len(k.Photos); i++ {
+					photo[i] = &pb.Images{ImageId: k.Photos[i]}
+				}
+				match.Result[i].Photos = photo
+				break
+			}
+		}
+
+	}
+
+	return match, nil
+
+}
+
+func (U *UserUsecase) CreateIntrest(req *pb.IntrestRequest) error {
+
+	var intrestReq domain.IntrestRequests
+
+	copier.Copy(&intrestReq, &req)
+
+	err := U.UserRepo.CreateIntrests(intrestReq)
 
 	if err != nil {
 		return err
 	}
 
-	var userDataByGender authPb.UserResponses
-
-	if resp.Data != nil {
-		if err := proto.Unmarshal(resp.Data.Value, &userDataByGender); err != nil {
-			return err
-		}
-	}
-
-	fmt.Println(userDataByGender.UserRepsonses)
-
 	return nil
-
 }

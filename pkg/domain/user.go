@@ -26,3 +26,10 @@ type UserPreferences struct {
 	TeaPerson     string     `gorm:"not null"`
 	LoveLanguage  string     `gorm:"not null"`
 }
+
+type IntrestRequests struct {
+	gorm.Model
+	SenderID  uint `gorm:"not null"`
+	ReciverID uint `gorm:"not null"`
+	Status    string `gorm:"default:'P'"`
+}

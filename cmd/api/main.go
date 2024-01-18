@@ -8,7 +8,6 @@ import (
 	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
 	"github.com/ashiqsabith123/match-svc/pkg/config"
 	"github.com/ashiqsabith123/match-svc/pkg/di"
-	"github.com/ashiqsabith123/match-svc/pkg/helper"
 	"google.golang.org/grpc"
 )
 
@@ -59,13 +58,13 @@ func StartService() {
 	config, err := config.LoadConfig()
 
 	if err != nil {
-		logs.ErrLog.Fatalln(helper.Red("Error while loading config", err))
+		logs.ErrLog.Fatalln("Error while loading config", err)
 	}
 
 	err = logs.InitLogger("./pkg/logs/log.log")
 	if err != nil {
 		fmt.Println(err)
-		logs.ErrLog.Fatalln(helper.Red("Error while initilizing logger", err))
+		logs.ErrLog.Fatalln("Error while initilizing logger", err)
 	}
 	service := di.IntializeService(config)
 

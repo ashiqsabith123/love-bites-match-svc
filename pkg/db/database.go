@@ -22,6 +22,7 @@ func ConnectToDatabase(config config.Config) *gorm.DB {
 	db.AutoMigrate(
 		domain.UserPhotos{},
 		domain.UserPreferences{},
+		domain.IntrestRequests{},
 	)
 
 	logs.GenLog.Println("Database connected succesfully....")

@@ -16,6 +16,16 @@ github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240108115950-2e158280eac9 h1
 github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240108115950-2e158280eac9/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
 github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240112045301-954c5e353213 h1:C4o/oX1o7Sfslsdqhj0SPvdLfiBICzIhjOHSEWcUQJY=
 github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240112045301-954c5e353213/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240116050821-0963c3d3b91c h1:1wwAXxopiu8a3rgFtChFRtk3GS+nj2urcPGQuvKiNKw=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240116050821-0963c3d3b91c/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240116052402-dbf5592e47c9 h1:NdeeIHKy7Qyk9gZmAMWnSFCdMejFDsOyu7+iKzsipuE=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240116052402-dbf5592e47c9/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240116060256-01f292562688 h1:iIP0XC2RG5Hpzr5wePvTrEw8vFCWGqKmTzlVKFtM+4I=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240116060256-01f292562688/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240116091652-05fd9cfd3daa h1:5OkVmViRSAEihDSFfnaNtxJ1mNFSrT5A88jgqU82U6s=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240116091652-05fd9cfd3daa/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240117090600-1012d8a6e78b h1:bRls+IZNr7ezJT3U2zCOmUZ+XikRINAls3YFQH/7KYQ=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240117090600-1012d8a6e78b/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
 github.com/aws/aws-sdk-go v1.49.5 h1:y2yfBlwjPDi3/sBVKeznYEdDy6wIhjA2L5NCBMLUIYA=
 github.com/aws/aws-sdk-go v1.49.5/go.mod h1:LF8svs817+Nz+DmiMQKTO3ubZ/6IaTpq3TjupRn3Eqk=
 github.com/aws/aws-sdk-go v1.49.16 h1:KAQwhLg296hfffRdh+itA9p7Nx/3cXS/qOa3uF9ssig=
