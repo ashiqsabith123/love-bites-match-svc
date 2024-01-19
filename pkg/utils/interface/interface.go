@@ -9,5 +9,5 @@ import (
 type Utils interface {
 	UploadPhotos(key string, image []byte) error
 	FilterWithDistance(user *authPb.UserRepsonse, matchUsersList []authPb.UserRepsonse)
-	MakeMatchesByPrefrences(userData *authPb.UserRepsonse, usersData []*authPb.UserRepsonse, usersPrefrences []domain.UserPreferences) (responses.Result, error)
+	MakeMatchesByPrefrences(person1Data *authPb.UserRepsonse, person2Data []*authPb.UserRepsonse, person1Prefrences []domain.UserPreferences, person2sPrefrences []domain.UserPreferences) (responses.Result, error)
 }

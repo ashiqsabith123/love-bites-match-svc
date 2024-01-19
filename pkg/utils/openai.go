@@ -7,32 +7,33 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strconv"
 
 	authPb "github.com/ashiqsabith123/love-bytes-proto/auth/pb"
 	"github.com/ashiqsabith123/match-svc/pkg/domain"
 	"github.com/ashiqsabith123/match-svc/pkg/helper/responses"
 )
 
-func (M *Utils) MakeMatchesByPrefrences(userData *authPb.UserRepsonse, usersData []*authPb.UserRepsonse, usersPrefrences []domain.UserPreferences) (responses.Result, error) {
+func (M *Utils) MakeMatchesByPrefrences(userData *authPb.UserRepsonse, usersData []*authPb.UserRepsonse, person1Prefrences []domain.UserPreferences, person2sPrefrences []domain.UserPreferences) (responses.Result, error) {
 
 	var content1 string
 	var content2 string
 
-	content1 += fmt.Sprintf("user_id %v - name: %v, height: %v, marital_status: %v, faith: %v, mother_tongue: %v, smoke_status: %v, alcohol_status: %v, settle_status: %v, hobbies: %v, tea_person: %v, love_language: %v, date_of_birth: %v", userData.UserID, userData.Fullname, usersPrefrences[0].Height, usersPrefrences[0].MaritalStatus, usersPrefrences[0].Faith, usersPrefrences[0].MotherTounge, usersPrefrences[0].SmokeStatus, usersPrefrences[0].AlcoholStatus, usersPrefrences[0].SettleStatus, usersPrefrences[0].Hobbies, usersPrefrences[0].TeaPerson, usersPrefrences[0].LoveLanguage, userData.Dob)
+	length := len(person2sPrefrences)
+
+	matchLen := strconv.Itoa(length)
+
+	content1 += fmt.Sprintf("user_id %v - name: %v, height: %v, marital_status: %v, faith: %v, mother_tongue: %v, smoke_status: %v, alcohol_status: %v, settle_status: %v, hobbies: %v, tea_person: %v, love_language: %v, date_of_birth: %v", userData.UserID, userData.Fullname, person1Prefrences[0].Height, person1Prefrences[0].MaritalStatus, person1Prefrences[0].Faith, person1Prefrences[0].MotherTounge, person1Prefrences[0].SmokeStatus, person1Prefrences[0].AlcoholStatus, person1Prefrences[0].SettleStatus, person1Prefrences[0].Hobbies, person1Prefrences[0].TeaPerson, person1Prefrences[0].LoveLanguage, userData.Dob)
 
 	for i, v := range usersData {
 
-		if i < 1 {
-			continue
-		}
-
-		c := fmt.Sprintf("user_id %v - name: %v, height: %v, marital_status: %v, faith: %v, mother_tongue: %v, smoke_status: %v, alcohol_status: %v, settle_status: %v, hobbies: %v, tea_person: %v, love_language: %v, date_of_birth: %v, place: %v", v.UserID, v.Fullname, usersPrefrences[i].Height, usersPrefrences[i].MaritalStatus, usersPrefrences[i].Faith, usersPrefrences[i].MotherTounge, usersPrefrences[i].SmokeStatus, usersPrefrences[i].AlcoholStatus, usersPrefrences[i].SettleStatus, usersPrefrences[i].Hobbies, usersPrefrences[i].TeaPerson, usersPrefrences[i].LoveLanguage, v.Dob, v.Location)
+		c := fmt.Sprintf("user_id %v - name: %v, height: %v, marital_status: %v, faith: %v, mother_tongue: %v, smoke_status: %v, alcohol_status: %v, settle_status: %v, hobbies: %v, tea_person: %v, love_language: %v, date_of_birth: %v, place: %v", v.UserID, v.Fullname, person2sPrefrences[i].Height, person2sPrefrences[i].MaritalStatus, person2sPrefrences[i].Faith, person2sPrefrences[i].MotherTounge, person2sPrefrences[i].SmokeStatus, person2sPrefrences[i].AlcoholStatus, person2sPrefrences[i].SettleStatus, person2sPrefrences[i].Hobbies, person2sPrefrences[i].TeaPerson, person2sPrefrences[i].LoveLanguage, v.Dob, v.Location)
 
 		content2 += c + " "
 
 	}
 
-	match, err := M.OpenAi(content1, content2)
+	match, err := M.OpenAi(content1, content2, matchLen)
 
 	if err != nil {
 		return responses.Result{}, err
@@ -41,7 +42,7 @@ func (M *Utils) MakeMatchesByPrefrences(userData *authPb.UserRepsonse, usersData
 	return match, nil
 }
 
-func (O *Utils) OpenAi(content1, content2 string) (responses.Result, error) {
+func (O *Utils) OpenAi(content1, content2, matchLen string) (responses.Result, error) {
 
 	fmt.Println(content1)
 	fmt.Println("")
@@ -65,7 +66,7 @@ func (O *Utils) OpenAi(content1, content2 string) (responses.Result, error) {
 		Model:       "gpt-3.5-turbo",
 		Temperature: 0.7,
 		Messages: []Message{
-			{Role: "system", Content: "You're a matchmaker. I'll share details about a person as person1 and provide a list of potential matches with their name, dob, and preferences as person2 in JSON format. Your task is to identify the top 10 perfect matches for person1, ordered by match score. Keep it concise. Format the response as {result: user_id, name, matchscore, age, place}."},
+			{Role: "system", Content: "You're a matchmaker. I'll share details about a person as person1 and provide a list of potential matches with their name, dob, and preferences as person2 in JSON format. Your task is to identify the top 5 perfect matches for person1, ordered by match score. Keep it concise. Format the response as {result: user_id, name, matchscore, age, place}."},
 			{Role: "user", Content: "person1 - " + content1},
 			{Role: "user", Content: "person2 list of persons - " + content2},
 		},

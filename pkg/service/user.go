@@ -111,7 +111,7 @@ func (U *UserService) GetMatchedUsers(ctx context.Context, req *pb.UserIdRequest
 	}
 
 	return &pb.MatchResponse{
-		Code:    http.StatusOK,
+		Code:    500,
 		Message: "Data fetched succesfully",
 		Data: &anypb.Any{
 			Value: dataInBytes,
@@ -134,10 +134,8 @@ func (U *UserService) CreateIntrests(ctx context.Context, intrest *pb.IntrestReq
 		}, nil
 	}
 
-
 	return &pb.MatchResponse{
-		Code:    http.StatusOK,
+		Code:    http.StatusCreated,
 		Message: "Intrest request created succesfully",
-		
 	}, nil
 }

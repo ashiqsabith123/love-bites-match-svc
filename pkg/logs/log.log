@@ -1244,3 +1244,277 @@ Error Logger:	2024/01/18 09:36:35 user.go:73: Error while getting user matches r
 Error Logger:	2024/01/18 09:36:47 user.go:73: Error while getting user matches rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :50051: connect: connection refused"
 Error Logger:	2024/01/18 09:36:50 user.go:73: Error while getting user matches rpc error: code = Unavailable desc = connection error: desc = "transport: Error while dialing: dial tcp :50051: connect: connection refused"
 Error Logger:	2024/01/18 09:37:06 user.go:73: Error while getting user matches invalid character 'r' looking for beginning of object key string
+General Logger:	2024/01/18 11:59:29 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/18 11:59:29 database.go:28: Database connected succesfully....
+General Logger:	2024/01/18 11:59:29 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/18 11:59:29 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/18 12:04:24 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/18 12:04:24 database.go:28: Database connected succesfully....
+General Logger:	2024/01/18 12:04:24 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/18 12:04:24 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/18 12:05:53 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/18 12:05:53 database.go:28: Database connected succesfully....
+General Logger:	2024/01/18 12:05:53 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/18 12:05:53 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/18 12:11:31 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/18 12:11:31 database.go:28: Database connected succesfully....
+General Logger:	2024/01/18 12:11:31 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/18 12:11:31 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/18 12:12:31 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/18 12:12:32 database.go:28: Database connected succesfully....
+General Logger:	2024/01/18 12:12:32 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/18 12:12:32 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 10:09:22 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 10:09:22 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 10:09:22 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 10:09:22 main.go:83: Match Svc listening on :50052
+Error Logger:	2024/01/19 10:10:59 user.go:73: Error while getting user matches json: cannot unmarshal string into Go struct field Match.result.matchscore of type float32
+General Logger:	2024/01/19 10:32:45 user.go:38: Photo upload succecsfully
+Error Logger:	2024/01/19 10:33:15 user.go:52: Error while saving user prefrences ERROR: insert or update on table "user_preferences" violates foreign key constraint "fk_user_preferences_user_photos" (SQLSTATE 23503)
+General Logger:	2024/01/19 10:36:30 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 10:36:30 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 10:36:30 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 10:36:30 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 10:43:45 user.go:38: Photo upload succecsfully
+General Logger:	2024/01/19 12:03:22 user.go:62: User prefrences added succecsfully
+General Logger:	2024/01/19 12:08:20 user.go:38: Photo upload succecsfully
+General Logger:	2024/01/19 12:08:58 user.go:62: User prefrences added succecsfully
+Error Logger:	2024/01/19 12:11:51 user.go:52: Error while saving user prefrences ERROR: insert or update on table "user_preferences" violates foreign key constraint "fk_user_preferences_user_photos" (SQLSTATE 23503)
+General Logger:	2024/01/19 12:12:29 user.go:38: Photo upload succecsfully
+General Logger:	2024/01/19 12:12:35 user.go:62: User prefrences added succecsfully
+General Logger:	2024/01/19 12:34:25 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:34:25 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:34:25 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:34:25 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 12:36:29 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:36:29 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:36:29 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:36:29 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 12:38:54 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:38:54 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:38:54 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:38:54 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 12:43:22 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:43:22 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:43:22 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:43:22 main.go:83: Match Svc listening on :50052
+Error Logger:	2024/01/19 12:44:07 user.go:73: Error while getting user matches json: cannot unmarshal array into Go value of type responses.Result
+General Logger:	2024/01/19 12:47:41 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:47:41 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:47:41 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:47:41 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 12:48:03 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:48:03 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:48:03 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:48:03 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 12:49:28 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:49:28 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:49:28 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:49:28 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 12:50:02 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:50:02 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:50:02 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:50:02 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 12:51:32 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:51:33 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:51:33 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:51:33 main.go:83: Match Svc listening on :50052
+Error Logger:	2024/01/19 12:51:44 user.go:73: Error while getting user matches invalid character 'H' looking for beginning of value
+General Logger:	2024/01/19 12:52:16 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:52:17 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:52:17 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:52:17 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 12:55:30 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:55:30 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:55:30 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:55:30 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 12:55:55 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:55:55 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:55:55 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:55:55 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 12:57:16 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:57:16 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:57:16 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:57:16 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 12:58:30 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 12:58:30 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 12:58:30 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 12:58:30 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 13:10:51 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 13:10:51 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 13:10:51 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 13:10:51 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 13:11:43 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 13:11:43 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 13:11:43 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 13:11:43 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 13:18:24 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 13:18:24 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 13:18:24 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 13:18:24 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 13:24:24 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 13:24:25 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 13:24:25 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 13:24:25 main.go:83: Match Svc listening on :50052
+Error Logger:	2024/01/19 13:25:07 user.go:73: Error while getting user matches json: cannot unmarshal string into Go struct field Result.result of type []responses.Match
+General Logger:	2024/01/19 13:26:40 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 13:26:40 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 13:26:40 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 13:26:40 main.go:83: Match Svc listening on :50052
+Error Logger:	2024/01/19 13:26:46 user.go:73: Error while getting user matches json: cannot unmarshal string into Go struct field Result.result of type []responses.Match
+Error Logger:	2024/01/19 13:33:35 user.go:73: Error while getting user matches Openai api err:429 Too Many Requests
+Error Logger:	2024/01/19 13:34:09 user.go:73: Error while getting user matches Openai api err:429 Too Many Requests
+Error Logger:	2024/01/19 13:34:14 user.go:73: Error while getting user matches Openai api err:429 Too Many Requests
+Error Logger:	2024/01/19 13:34:17 user.go:73: Error while getting user matches Openai api err:429 Too Many Requests
+Error Logger:	2024/01/19 13:34:18 user.go:73: Error while getting user matches Openai api err:429 Too Many Requests
+Error Logger:	2024/01/19 13:34:21 user.go:73: Error while getting user matches Openai api err:429 Too Many Requests
+Error Logger:	2024/01/19 13:34:41 user.go:73: Error while getting user matches Openai api err:429 Too Many Requests
+Error Logger:	2024/01/19 13:34:46 user.go:73: Error while getting user matches invalid character 'B' looking for beginning of value
+General Logger:	2024/01/19 14:45:58 user.go:38: Photo upload succecsfully
+General Logger:	2024/01/19 14:51:13 user.go:62: User prefrences added succecsfully
+General Logger:	2024/01/19 14:53:37 user.go:38: Photo upload succecsfully
+General Logger:	2024/01/19 14:54:00 user.go:62: User prefrences added succecsfully
+Error Logger:	2024/01/19 14:54:42 user.go:73: Error while getting user matches invalid character 'H' looking for beginning of value
+Error Logger:	2024/01/19 15:25:32 user.go:73: Error while getting user matches invalid character 'P' looking for beginning of value
+Error Logger:	2024/01/19 15:51:15 user.go:73: Error while getting user matches invalid character 'H' looking for beginning of value
+Error Logger:	2024/01/19 16:34:34 user.go:73: Error while getting user matches invalid character 'P' looking for beginning of value
+Error Logger:	2024/01/19 16:37:10 user.go:73: Error while getting user matches invalid character 'B' looking for beginning of value
+General Logger:	2024/01/19 16:44:15 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 16:44:15 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 16:44:15 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 16:44:15 main.go:83: Match Svc listening on :50052
+Error Logger:	2024/01/19 16:44:35 user.go:73: Error while getting user matches invalid character '{' after top-level value
+General Logger:	2024/01/19 16:45:19 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 16:45:19 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 16:45:19 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 16:45:19 main.go:83: Match Svc listening on :50052
+Error Logger:	2024/01/19 16:45:37 user.go:73: Error while getting user matches invalid character '{' after top-level value
+Error Logger:	2024/01/19 16:47:48 user.go:73: Error while getting user matches invalid character ',' after top-level value
+General Logger:	2024/01/19 16:49:56 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 16:49:56 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 16:49:56 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 16:49:56 main.go:83: Match Svc listening on :50052
+Error Logger:	2024/01/19 17:07:31 user.go:73: Error while getting user matches invalid character '/' looking for beginning of value
+General Logger:	2024/01/19 17:14:56 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 17:14:56 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 17:14:56 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 17:14:56 main.go:83: Match Svc listening on :50052
+Error Logger:	2024/01/19 17:33:57 user.go:73: Error while getting user matches invalid character 'H' looking for beginning of value
+General Logger:	2024/01/19 17:43:29 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 17:43:29 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 17:43:29 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 17:43:29 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 18:57:11 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 18:57:11 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 18:57:11 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 18:57:11 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 19:33:27 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 19:33:27 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 19:33:27 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 19:33:27 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/19 19:34:19 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/19 19:34:19 database.go:28: Database connected succesfully....
+General Logger:	2024/01/19 19:34:19 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/19 19:34:19 main.go:83: Match Svc listening on :50052

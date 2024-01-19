@@ -2,6 +2,7 @@ package usecase
 
 import (
 	"context"
+	"errors"
 	"io"
 	"sync"
 
@@ -116,52 +117,57 @@ func (U *UserUsecase) SaveUserPrefrences(req *pb.UserPrefrencesRequest) error {
 
 func (U *UserUsecase) FindMatches(req *pb.UserIdRequest) (responses.Result, error) {
 
-	resp, err := U.Client.GetUserByID(context.TODO(), &authPb.UserIDRequest{UserID: req.UserID})
+	resp, _ := U.Client.GetUserByID(context.TODO(), &authPb.UserIDRequest{UserID: req.UserID})
 
-	if err != nil {
-		return responses.Result{}, err
+	if resp.Data == nil {
+		return responses.Result{}, errors.New("coudnt fetch user data by id")
 	}
 
-	var userData authPb.UserRepsonse
+	var person1 authPb.UserRepsonse
 
 	if resp.Data != nil {
-		if err := proto.Unmarshal(resp.Data.Value, &userData); err != nil {
+		if err := proto.Unmarshal(resp.Data.Value, &person1); err != nil {
 			return responses.Result{}, err
 		}
 	}
 
 	gender := "M"
 
-	if userData.Gender == "M" {
+	if person1.Gender == "M" {
 		gender = "F"
 	}
 
-	resp, err = U.Client.GetUsersByGender(context.TODO(), &authPb.UserGenderRequest{Gender: gender})
+	resp, err := U.Client.GetUsersByGender(context.TODO(), &authPb.UserGenderRequest{Gender: gender})
 
 	if err != nil {
 		return responses.Result{}, err
 	}
 
-	var usersDataByGender authPb.UserResponses
+	var person2sDataByGender authPb.UserResponses
 
 	if resp.Data != nil {
-		if err := proto.Unmarshal(resp.Data.Value, &usersDataByGender); err != nil {
+		if err := proto.Unmarshal(resp.Data.Value, &person2sDataByGender); err != nil {
 			return responses.Result{}, err
 		}
 	}
 
-	userIDs := []int32{userData.UserID}
+	userIDs := []int32{}
 
-	for _, v := range usersDataByGender.UserRepsonses {
+	for _, v := range person2sDataByGender.UserRepsonses {
 		userIDs = append(userIDs, v.UserID)
 	}
 
-	userPrefrences, err := U.UserRepo.GetUserPrefrencesByID(userIDs)
+	person2sPrefrences, err := U.UserRepo.GetUserPrefrencesByID(userIDs)
 	if err != nil {
 		return responses.Result{}, err
 	}
 
-	match, err := U.Utils.MakeMatchesByPrefrences(&userData, usersDataByGender.UserRepsonses, userPrefrences)
+	person1Prefrences, err := U.UserRepo.GetUserPrefrencesByID([]int32{req.UserID})
+	if err != nil {
+		return responses.Result{}, err
+	}
+
+	match, err := U.Utils.MakeMatchesByPrefrences(&person1, person2sDataByGender.UserRepsonses, person1Prefrences, person2sPrefrences)
 
 	if err != nil {
 		return responses.Result{}, err
