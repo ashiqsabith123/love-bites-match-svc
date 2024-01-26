@@ -4,6 +4,7 @@ import (
 	"errors"
 
 	"github.com/ashiqsabith123/match-svc/pkg/domain"
+	"github.com/ashiqsabith123/match-svc/pkg/helper/responses"
 	interfaces "github.com/ashiqsabith123/match-svc/pkg/repository/interface"
 	"github.com/lib/pq"
 	"gorm.io/gorm"
@@ -72,4 +73,27 @@ func (U *UserRepo) CreateIntrests(intrest domain.IntrestRequests) error {
 	}
 
 	return nil
+}
+
+func (U *UserRepo) GetIntrestRequestAndPhotoById(id uint) (userIntrests []responses.Interests, err error) {
+
+	query :=
+		"SELECT users.id,users.user_id AS user_id, users.created_at, users.status, (user_photos.photos)[1] AS photo FROM (SELECT id, receiver_id AS user_id, created_at, status FROM intrest_requests WHERE sender_id = $1 AND status = 'A' UNION SELECT id, sender_id AS user_id, created_at, status FROM intrest_requests WHERE receiver_id = $2) AS users INNER JOIN user_photos ON user_photos.user_id = users.user_id;"
+	if err := U.Postgres.Raw(query, id, id).Scan(&userIntrests).Error; err != nil {
+		return userIntrests, err
+	}
+
+	return userIntrests, nil
+}
+
+func (U *UserRepo) GetUserPhotoByID(id int) (photo string, err error) {
+
+	query := "SELECT photos[1] FROM user_photos WHERE id = $1"
+
+	if err := U.Postgres.Raw(query, id).Scan(&photo).Error; err != nil {
+		return "", err
+
+	}
+
+	return photo, nil
 }

@@ -5,6 +5,7 @@ package di
 
 import (
 	"github.com/ashiqsabith123/match-svc/pkg/clients/auth"
+	"github.com/ashiqsabith123/match-svc/pkg/clients/notification"
 	"github.com/ashiqsabith123/match-svc/pkg/config"
 	"github.com/ashiqsabith123/match-svc/pkg/db"
 	"github.com/ashiqsabith123/match-svc/pkg/repository"
@@ -21,6 +22,7 @@ func IntializeService(config config.Config) service.UserService {
 		repository.NewUserRepo,
 		usecase.NewUserUsecase,
 		auth.NewAuthClient,
+		notification.NewNotificationClient,
 		service.NewUserService,
 		utils.NewS3Client,
 	)

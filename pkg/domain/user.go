@@ -14,7 +14,7 @@ type UserPhotos struct {
 type UserPreferences struct {
 	gorm.Model
 	UserId        uint       `gorm:"unique;not null"`
-	UserPhotos    UserPhotos `gorm:"foreignKey:UserId"`
+	UserPhotos    UserPhotos `gorm:"foreignKey:UserId;references:UserID"`
 	Height        string     `gorm:"not null"`
 	MaritalStatus string     `gorm:"not null"`
 	Faith         string     `gorm:"not null"`
@@ -29,7 +29,8 @@ type UserPreferences struct {
 
 type IntrestRequests struct {
 	gorm.Model
-	SenderID  uint `gorm:"not null"`
-	ReciverID uint `gorm:"not null"`
-	Status    string `gorm:"default:'P'"`
+	SenderID   uint       `gorm:"not null"`
+	ReceiverID uint       `gorm:"not null"`
+	UserPhotos UserPhotos `gorm:"foreignKey:ReceiverID;references:UserID"`
+	Status     string     `gorm:"default:'P'"`
 }

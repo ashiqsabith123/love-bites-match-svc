@@ -10,4 +10,5 @@ type UserUsecase interface {
 	SaveUserPrefrences(req *pb.UserPrefrencesRequest) error
 	FindMatches(req *pb.UserIdRequest) (responses.Result, error)
 	CreateIntrest(req *pb.IntrestRequest) error
+	GetIntrests(req *pb.UserIdRequest) ([]responses.Interests, error)
 }

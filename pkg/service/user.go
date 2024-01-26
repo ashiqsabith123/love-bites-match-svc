@@ -3,6 +3,7 @@ package service
 import (
 	"context"
 	"net/http"
+	"sort"
 
 	logs "github.com/ashiqsabith123/love-bytes-proto/log"
 	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
@@ -111,7 +112,7 @@ func (U *UserService) GetMatchedUsers(ctx context.Context, req *pb.UserIdRequest
 	}
 
 	return &pb.MatchResponse{
-		Code:    500,
+		Code:    http.StatusOK,
 		Message: "Data fetched succesfully",
 		Data: &anypb.Any{
 			Value: dataInBytes,
@@ -138,4 +139,62 @@ func (U *UserService) CreateIntrests(ctx context.Context, intrest *pb.IntrestReq
 		Code:    http.StatusCreated,
 		Message: "Intrest request created succesfully",
 	}, nil
+}
+
+func (U *UserService) GetAllInteretsRequests(ctx context.Context, req *pb.UserIdRequest) (*pb.MatchResponse, error) {
+	intrests, err := U.UserUsecase.GetIntrests(req)
+
+	if err != nil {
+		logs.ErrLog.Println("Error while create intrest", err)
+		return &pb.MatchResponse{
+			Code:    500,
+			Message: "Server error",
+			Error: &anypb.Any{
+				Value: []byte(err.Error()),
+			},
+		}, nil
+	}
+
+	sort.Slice(intrests, func(i, j int) bool {
+		return intrests[i].CreatedAt.After(intrests[j].CreatedAt)
+	})
+
+	data := make([]*pb.Interest, len(intrests))
+
+	for i, v := range intrests {
+		intrests := &pb.Interest{
+			
+			UserID: uint32(v.UserID),
+			Name:   v.Name,
+			Photo:  v.Photo,
+			Time:   v.CreatedAt.Format("03:04 PM, Mon 02 Jan 2006"),
+			Status: v.Status,
+		}
+
+		data[i] = intrests
+	}
+
+	intrestRequets := pb.IntrestRequests{
+		IntrestRequest: data,
+	}
+
+	dataInBytes, err := proto.Marshal(&intrestRequets)
+	if err != nil {
+		return &pb.MatchResponse{
+			Code:    http.StatusInternalServerError,
+			Message: "Failed while marshaling",
+			Error: &anypb.Any{
+				Value: []byte(err.Error()),
+			},
+		}, nil
+	}
+
+	return &pb.MatchResponse{
+		Code:    http.StatusOK,
+		Message: "Data fetched succesfully",
+		Data: &anypb.Any{
+			Value: dataInBytes,
+		},
+	}, nil
+
 }

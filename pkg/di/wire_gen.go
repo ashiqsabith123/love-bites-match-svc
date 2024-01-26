@@ -8,6 +8,7 @@ package di
 
 import (
 	"github.com/ashiqsabith123/match-svc/pkg/clients/auth"
+	"github.com/ashiqsabith123/match-svc/pkg/clients/notification"
 	"github.com/ashiqsabith123/match-svc/pkg/config"
 	"github.com/ashiqsabith123/match-svc/pkg/db"
 	"github.com/ashiqsabith123/match-svc/pkg/repository"
@@ -23,7 +24,8 @@ func IntializeService(config2 config.Config) service.UserService {
 	userRepo := repository.NewUserRepo(gormDB)
 	intrefacesUtils := utils.NewS3Client(config2)
 	authClient := auth.NewAuthClient(config2)
-	userUsecase := usecase.NewUserUsecase(userRepo, intrefacesUtils, authClient)
+	notificationClient := notification.NewNotificationClient(config2)
+	userUsecase := usecase.NewUserUsecase(userRepo, intrefacesUtils, authClient, notificationClient)
 	userService := service.NewUserService(userUsecase)
 	return userService
 }

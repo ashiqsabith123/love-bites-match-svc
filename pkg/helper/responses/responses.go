@@ -1,6 +1,10 @@
 package responses
 
-import "github.com/ashiqsabith123/love-bytes-proto/match/pb"
+import (
+	"time"
+
+	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
+)
 
 type ChatCompletionResponse struct {
 	Choices []Choice `json:"choices"`
@@ -19,10 +23,19 @@ type Result struct {
 }
 
 type Match struct {
-	UserID     uint   `json:"user_id"`
-	Name       string `json:"name"`
-	MatchScore float32    `json:"matchscore"`
-	Age        int    `json:"age"`
-	Place      string `json:"place"`
+	UserID     uint    `json:"user_id"`
+	Name       string  `json:"name"`
+	MatchScore float32 `json:"matchscore"`
+	Age        int     `json:"age"`
+	Place      string  `json:"place"`
 	Photos     []*pb.Images
+}
+
+type Interests struct {
+	ID        uint
+	Name      string
+	CreatedAt time.Time
+	UserID    uint
+	Photo     string
+	Status    string
 }

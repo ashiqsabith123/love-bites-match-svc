@@ -9,7 +9,9 @@ import (
 	authPb "github.com/ashiqsabith123/love-bytes-proto/auth/pb"
 	logs "github.com/ashiqsabith123/love-bytes-proto/log"
 	"github.com/ashiqsabith123/love-bytes-proto/match/pb"
+	notifiPb "github.com/ashiqsabith123/love-bytes-proto/notifications/pb"
 	authClient "github.com/ashiqsabith123/match-svc/pkg/clients/auth/interface"
+	notifiClient "github.com/ashiqsabith123/match-svc/pkg/clients/notification/interface"
 	"github.com/ashiqsabith123/match-svc/pkg/domain"
 	"github.com/ashiqsabith123/match-svc/pkg/helper/responses"
 	repo "github.com/ashiqsabith123/match-svc/pkg/repository/interface"
@@ -21,13 +23,14 @@ import (
 )
 
 type UserUsecase struct {
-	UserRepo repo.UserRepo
-	Utils    utils.Utils
-	Client   authPb.AuthServiceClient
+	UserRepo           repo.UserRepo
+	Utils              utils.Utils
+	AuthClient         authPb.AuthServiceClient
+	NotificationClient notifiPb.NotificationServiceClient
 }
 
-func NewUserUsecase(repo repo.UserRepo, utils utils.Utils, client authClient.AuthClient) interfaces.UserUsecase {
-	return &UserUsecase{UserRepo: repo, Utils: utils, Client: client.GetClient()}
+func NewUserUsecase(repo repo.UserRepo, utils utils.Utils, authClient authClient.AuthClient, notifiClient notifiClient.NotificationClient) interfaces.UserUsecase {
+	return &UserUsecase{UserRepo: repo, Utils: utils, AuthClient: authClient.GetClient(), NotificationClient: notifiClient.GetClient()}
 }
 
 func (U *UserUsecase) SaveAndUploadPhotos(stream pb.MatchService_UplaodPhotosServer) error {
@@ -117,7 +120,7 @@ func (U *UserUsecase) SaveUserPrefrences(req *pb.UserPrefrencesRequest) error {
 
 func (U *UserUsecase) FindMatches(req *pb.UserIdRequest) (responses.Result, error) {
 
-	resp, _ := U.Client.GetUserByID(context.TODO(), &authPb.UserIDRequest{UserID: req.UserID})
+	resp, _ := U.AuthClient.GetUserByID(context.TODO(), &authPb.UserIDRequest{UserID: req.UserID})
 
 	if resp.Data == nil {
 		return responses.Result{}, errors.New("coudnt fetch user data by id")
@@ -137,7 +140,7 @@ func (U *UserUsecase) FindMatches(req *pb.UserIdRequest) (responses.Result, erro
 		gender = "F"
 	}
 
-	resp, err := U.Client.GetUsersByGender(context.TODO(), &authPb.UserGenderRequest{Gender: gender})
+	resp, err := U.AuthClient.GetUsersByGender(context.TODO(), &authPb.UserGenderRequest{Gender: gender})
 
 	if err != nil {
 		return responses.Result{}, err
@@ -215,5 +218,123 @@ func (U *UserUsecase) CreateIntrest(req *pb.IntrestRequest) error {
 		return err
 	}
 
+	wg := sync.WaitGroup{}
+
+	errCh := make(chan error, 2)
+	var name chan string
+	var photo chan string
+
+	wg.Add(1)
+
+	go func(wg *sync.WaitGroup) {
+		resp, _ := U.AuthClient.GetUserByID(context.Background(), &authPb.UserIDRequest{UserID: int32(req.ReceiverID)})
+
+		if resp == nil || resp.Data == nil {
+
+			errCh <- errors.New("data not found from the server")
+			return
+
+		}
+
+		var userDetails authPb.UserRepsonse
+
+		if err := proto.Unmarshal(resp.Data.Value, &userDetails); err != nil {
+			errCh <- errors.New("Data not found from the server" + err.Error())
+			return
+		}
+
+		name <- userDetails.Fullname
+
+		wg.Done()
+	}(&wg)
+
+	wg.Add(1)
+
+	go func(wg *sync.WaitGroup) {
+		pto, err := U.UserRepo.GetUserPhotoByID(int(req.ReceiverID))
+		if err != nil {
+			errCh <- err
+		}
+
+		photo <- pto
+
+		wg.Done()
+	}(&wg)
+
+	wg.Wait()
+	close(errCh)
+
+	for err := range errCh {
+		if err != nil {
+			return err
+		}
+	}
+
+	resp, _ := U.NotificationClient.CreateNotification(context.Background(), &notifiPb.NotificationRequest{
+		SenderID:   req.SenderID,
+		ReceiverID: req.ReceiverID,
+		Name:       <-name,
+		Image:      <-photo,
+		Type:       "request",
+		Status:     "P",
+	})
+
+	if resp.Err != "" {
+		return errors.New(resp.Err)
+	}
+
 	return nil
+}
+
+func (U *UserUsecase) GetIntrests(req *pb.UserIdRequest) ([]responses.Interests, error) {
+
+	wg := sync.WaitGroup{}
+
+	data, err := U.UserRepo.GetIntrestRequestAndPhotoById(uint(req.UserID))
+
+	if err != nil {
+		return []responses.Interests{}, err
+	}
+
+	ch := make(chan error, len(data))
+
+	for i, v := range data {
+
+		wg.Add(1)
+
+		go func(index int, id int32, wg *sync.WaitGroup, ch chan error) {
+			resp, _ := U.AuthClient.GetUserByID(context.Background(), &authPb.UserIDRequest{UserID: id})
+
+			if resp == nil || resp.Data == nil {
+
+				ch <- errors.New("data not found from the server")
+				return
+
+			}
+
+			var userDetails authPb.UserRepsonse
+
+			if err := proto.Unmarshal(resp.Data.Value, &userDetails); err != nil {
+				ch <- errors.New("Data not found from the server" + err.Error())
+				return
+			}
+
+			data[index].Name = userDetails.Fullname
+
+			wg.Done()
+
+		}(i, int32(v.UserID), &wg, ch)
+	}
+
+	wg.Wait()
+	close(ch)
+
+	for err := range ch {
+		if err != nil {
+			return []responses.Interests{}, err
+		}
+	}
+
+	return data, nil
+
 }
