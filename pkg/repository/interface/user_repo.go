@@ -10,7 +10,7 @@ type UserRepo interface {
 	SaveUserPrefrences(data domain.UserPreferences) error
 	GetUserPrefrencesByID(ids []int32) (usersPrefrences []domain.UserPreferences, err error)
 	GetUsersPhotosByID(ids []int32) (userPhotos []domain.UserPhotos, err error)
-	CreateIntrests(intrest domain.IntrestRequests) error
+	CreateIntrestsAndReturnID(intrest domain.IntrestRequests) (int, error)
 	GetIntrestRequestAndPhotoById(id uint) (userIntrests []responses.Interests, err error)
 	GetUserPhotoByID(id int) (photo string, err error)
 }

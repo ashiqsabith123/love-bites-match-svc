@@ -3,6 +3,7 @@ package usecase
 import (
 	"context"
 	"errors"
+	"fmt"
 	"io"
 	"sync"
 
@@ -207,62 +208,59 @@ func (U *UserUsecase) FindMatches(req *pb.UserIdRequest) (responses.Result, erro
 }
 
 func (U *UserUsecase) CreateIntrest(req *pb.IntrestRequest) error {
-
 	var intrestReq domain.IntrestRequests
-
 	copier.Copy(&intrestReq, &req)
 
-	err := U.UserRepo.CreateIntrests(intrestReq)
-
+	interestID, err := U.UserRepo.CreateIntrestsAndReturnID(intrestReq)
 	if err != nil {
 		return err
 	}
 
 	wg := sync.WaitGroup{}
-
 	errCh := make(chan error, 2)
-	var name chan string
-	var photo chan string
+	name := make(chan string, 1)  // Initialize with buffer size 1
+	photo := make(chan string, 1) // Initialize with buffer size 1
 
 	wg.Add(1)
+	go func() {
+		defer wg.Done()
 
-	go func(wg *sync.WaitGroup) {
-		resp, _ := U.AuthClient.GetUserByID(context.Background(), &authPb.UserIDRequest{UserID: int32(req.ReceiverID)})
-
-		if resp == nil || resp.Data == nil {
-
+		resp, err := U.AuthClient.GetUserByID(context.Background(), &authPb.UserIDRequest{UserID: int32(req.SenderID)})
+		if err != nil || resp == nil || resp.Data == nil {
 			errCh <- errors.New("data not found from the server")
 			return
-
 		}
 
 		var userDetails authPb.UserRepsonse
-
 		if err := proto.Unmarshal(resp.Data.Value, &userDetails); err != nil {
 			errCh <- errors.New("Data not found from the server" + err.Error())
 			return
 		}
 
 		name <- userDetails.Fullname
-
-		wg.Done()
-	}(&wg)
+	}()
 
 	wg.Add(1)
+	go func() {
+		defer wg.Done()
 
-	go func(wg *sync.WaitGroup) {
-		pto, err := U.UserRepo.GetUserPhotoByID(int(req.ReceiverID))
+		pto, err := U.UserRepo.GetUserPhotoByID(int(req.SenderID))
 		if err != nil {
 			errCh <- err
+			return
 		}
 
 		photo <- pto
-
-		wg.Done()
-	}(&wg)
+	}()
 
 	wg.Wait()
 	close(errCh)
+
+	// Retrieve values from channels
+	senderName := <-name
+	senderPhoto := <-photo
+
+	fmt.Println(senderName, senderPhoto)
 
 	for err := range errCh {
 		if err != nil {
@@ -270,17 +268,20 @@ func (U *UserUsecase) CreateIntrest(req *pb.IntrestRequest) error {
 		}
 	}
 
-	resp, _ := U.NotificationClient.CreateNotification(context.Background(), &notifiPb.NotificationRequest{
+	fmt.Println(req.ReceiverID)
+
+	resp, err := U.NotificationClient.CreateNotification(context.Background(), &notifiPb.Notification{
+
 		SenderID:   req.SenderID,
 		ReceiverID: req.ReceiverID,
-		Name:       <-name,
-		Image:      <-photo,
-		Type:       "request",
+		Name:       senderName,
+		Image:      senderPhoto,
+		Type:       "IR",
 		Status:     "P",
+		CommonID:   uint32(interestID),
 	})
-
-	if resp.Err != "" {
-		return errors.New(resp.Err)
+	if err != nil || resp.Err != "" {
+		return errors.New("Failed to create notification: " + err.Error())
 	}
 
 	return nil

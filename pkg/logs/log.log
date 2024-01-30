@@ -2267,3 +2267,227 @@ General Logger:	2024/01/26 17:57:18 database.go:28: Database connected succesful
 General Logger:	2024/01/26 17:57:18 auth_client.go:36: Auth service connected at port  :50051
 General Logger:	2024/01/26 17:57:18 notification_client.go:36: Notification service connected at port  :50053
 General Logger:	2024/01/26 17:57:18 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:13:20 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:13:21 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:13:21 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:13:21 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:13:21 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:22:06 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:22:06 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:22:06 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:22:06 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:22:06 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:22:52 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:22:52 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:22:52 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:22:52 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:22:52 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:23:07 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:23:07 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:23:07 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:23:07 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:23:07 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:24:07 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:24:07 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:24:07 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:24:07 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:24:07 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:24:26 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:24:26 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:24:26 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:24:26 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:24:26 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:25:15 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:25:15 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:25:15 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:25:15 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:25:15 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:25:34 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:25:34 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:25:34 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:25:34 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:25:34 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:27:16 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:27:16 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:27:16 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:27:16 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:27:16 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:32:51 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:32:51 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:32:51 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:32:51 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:32:51 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:35:10 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:35:10 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:35:10 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:35:10 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:35:10 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 09:40:26 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 09:40:26 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 09:40:26 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 09:40:26 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 09:40:26 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 10:01:25 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 10:01:25 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 10:01:25 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 10:01:25 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 10:01:25 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 10:06:11 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 10:06:11 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 10:06:11 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 10:06:11 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 10:06:11 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/27 10:06:37 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/27 10:06:37 database.go:28: Database connected succesfully....
+General Logger:	2024/01/27 10:06:37 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/27 10:06:37 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/27 10:06:37 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 13:25:08 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 13:25:08 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 13:25:08 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 13:25:08 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 13:25:08 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 13:29:36 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 13:29:36 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 13:29:36 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 13:29:36 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 13:29:36 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 13:32:32 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 13:32:33 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 13:32:33 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 13:32:33 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 13:32:33 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 15:01:44 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 15:01:44 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 15:01:44 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 15:01:44 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 15:01:44 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 15:46:36 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 15:46:36 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 15:46:36 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 15:46:36 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 15:46:36 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 15:50:25 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 15:50:25 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 15:50:25 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 15:50:25 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 15:50:25 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 15:51:20 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 15:51:20 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 15:51:20 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 15:51:20 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 15:51:20 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 18:50:59 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 18:50:59 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 18:50:59 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 18:50:59 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 18:50:59 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 18:52:44 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 18:52:44 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 18:52:44 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 18:52:44 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 18:52:44 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 18:54:33 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 18:54:34 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 18:54:34 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 18:54:34 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 18:54:34 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 18:59:04 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 18:59:04 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 18:59:04 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 18:59:04 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 18:59:04 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/29 18:59:28 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/29 18:59:28 database.go:28: Database connected succesfully....
+General Logger:	2024/01/29 18:59:28 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/29 18:59:28 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/29 18:59:28 main.go:83: Match Svc listening on :50052
+General Logger:	2024/01/30 10:21:19 logger.go:29: 
+
+
+Application restarted ---------
+General Logger:	2024/01/30 10:21:19 database.go:28: Database connected succesfully....
+General Logger:	2024/01/30 10:21:19 auth_client.go:36: Auth service connected at port  :50051
+General Logger:	2024/01/30 10:21:19 notification_client.go:36: Notification service connected at port  :50053
+General Logger:	2024/01/30 10:21:19 main.go:83: Match Svc listening on :50052

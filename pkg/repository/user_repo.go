@@ -64,15 +64,15 @@ func (U *UserRepo) GetUsersPhotosByID(ids []int32) (userPhotos []domain.UserPhot
 	return userPhotos, nil
 }
 
-func (U *UserRepo) CreateIntrests(intrest domain.IntrestRequests) error {
+func (U *UserRepo) CreateIntrestsAndReturnID(intrest domain.IntrestRequests) (int, error) {
 
 	err := U.Postgres.Create(&intrest).Error
 
 	if err != nil {
-		return err
+		return 0, err
 	}
 
-	return nil
+	return int(intrest.ID), nil
 }
 
 func (U *UserRepo) GetIntrestRequestAndPhotoById(id uint) (userIntrests []responses.Interests, err error) {
@@ -88,7 +88,7 @@ func (U *UserRepo) GetIntrestRequestAndPhotoById(id uint) (userIntrests []respon
 
 func (U *UserRepo) GetUserPhotoByID(id int) (photo string, err error) {
 
-	query := "SELECT photos[1] FROM user_photos WHERE id = $1"
+	query := "SELECT photos[1] FROM user_photos WHERE user_id = $1"
 
 	if err := U.Postgres.Raw(query, id).Scan(&photo).Error; err != nil {
 		return "", err

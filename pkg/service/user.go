@@ -122,6 +122,7 @@ func (U *UserService) GetMatchedUsers(ctx context.Context, req *pb.UserIdRequest
 }
 
 func (U *UserService) CreateIntrests(ctx context.Context, intrest *pb.IntrestRequest) (*pb.MatchResponse, error) {
+
 	err := U.UserUsecase.CreateIntrest(intrest)
 
 	if err != nil {
@@ -163,7 +164,7 @@ func (U *UserService) GetAllInteretsRequests(ctx context.Context, req *pb.UserId
 
 	for i, v := range intrests {
 		intrests := &pb.Interest{
-			
+
 			UserID: uint32(v.UserID),
 			Name:   v.Name,
 			Photo:  v.Photo,

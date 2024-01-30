@@ -1,5 +1,9 @@
 github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240126112803-1180ec66e2ae h1:kZ5220OK+Q5VumTWI1V5nUPbDQPLHQpVQ9qQHbU8sQQ=
 github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240126112803-1180ec66e2ae/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240127073134-17c84d460e73 h1:DwJO3nh7z0kuT289xru2P6yDSxYJ+vVEq4HKc513LWY=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240127073134-17c84d460e73/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240129050704-abf13e282488 h1:xB4yVxSL5iwmOt75ByCFJvnnr1PbK95AaKNVskqsHcU=
+github.com/ashiqsabith123/love-bytes-proto v0.0.0-20240129050704-abf13e282488/go.mod h1:FbSIbTUQLH9jnl8QRsGjVWEXF/HviIt+l6xM9oXsX7o=
 github.com/aws/aws-sdk-go v1.49.16 h1:KAQwhLg296hfffRdh+itA9p7Nx/3cXS/qOa3uF9ssig=
 github.com/aws/aws-sdk-go v1.49.16/go.mod h1:LF8svs817+Nz+DmiMQKTO3ubZ/6IaTpq3TjupRn3Eqk=
 github.com/aws/aws-sdk-go-v2 v1.24.1 h1:xAojnj+ktS95YZlDf0zxWBkbFtymPeDP+rvUQIH3uAU=
