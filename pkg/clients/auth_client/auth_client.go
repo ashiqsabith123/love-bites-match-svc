@@ -4,7 +4,7 @@ import (
 	logs "github.com/ashiqsabith123/love-bytes-proto/log"
 
 	"github.com/ashiqsabith123/love-bytes-proto/auth/pb"
-	interfaces "github.com/ashiqsabith123/match-svc/pkg/clients/auth/interface"
+	interfaces "github.com/ashiqsabith123/match-svc/pkg/clients/auth_client/interface"
 	"github.com/ashiqsabith123/match-svc/pkg/config"
 	"google.golang.org/grpc"
 )

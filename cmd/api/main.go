@@ -53,6 +53,12 @@ func main() {
 
 func StartService() {
 
+	err := logs.InitLogger("./pkg/logs/log.log")
+	if err != nil {
+		fmt.Println(err)
+		logs.ErrLog.Fatalln("Error while initilizing logger", err)
+	}
+
 	defer Recover()
 
 	config, err := config.LoadConfig()
@@ -61,11 +67,7 @@ func StartService() {
 		logs.ErrLog.Fatalln("Error while loading config", err)
 	}
 
-	err = logs.InitLogger("./pkg/logs/log.log")
-	if err != nil {
-		fmt.Println(err)
-		logs.ErrLog.Fatalln("Error while initilizing logger", err)
-	}
+	
 	service := di.IntializeService(config)
 
 	defer func() {
@@ -79,6 +81,8 @@ func StartService() {
 	if err != nil {
 		logs.ErrLog.Fatalln("Failed to listening:", err)
 	}
+
+	
 
 	logs.GenLog.Println("Match Svc listening on", config.Port.SvcPort)
 

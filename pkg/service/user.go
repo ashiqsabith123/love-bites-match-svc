@@ -199,3 +199,23 @@ func (U *UserService) GetAllInteretsRequests(ctx context.Context, req *pb.UserId
 	}, nil
 
 }
+
+func (U *UserService) ChangeInterestRequestStatus(ctx context.Context, req *pb.ChangeInterestRequest) (*pb.MatchResponse, error) {
+
+	err := U.UserUsecase.ChangeIntrestRequestStatus(req)
+	if err != nil {
+		logs.ErrLog.Println("Error while updating intrest status", err)
+		return &pb.MatchResponse{
+			Code:    500,
+			Message: "Server error",
+			Error: &anypb.Any{
+				Value: []byte(err.Error()),
+			},
+		}, nil
+	}
+
+	return &pb.MatchResponse{
+		Code:    http.StatusOK,
+		Message: "Intrest request status changed succesfully",
+	}, nil
+}

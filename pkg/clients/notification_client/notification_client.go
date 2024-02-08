@@ -4,7 +4,7 @@ import (
 	logs "github.com/ashiqsabith123/love-bytes-proto/log"
 
 	"github.com/ashiqsabith123/love-bytes-proto/notifications/pb"
-	interfaces "github.com/ashiqsabith123/match-svc/pkg/clients/notification/interface"
+	interfaces "github.com/ashiqsabith123/match-svc/pkg/clients/notification_client/interface"
 	"github.com/ashiqsabith123/match-svc/pkg/config"
 	"google.golang.org/grpc"
 )

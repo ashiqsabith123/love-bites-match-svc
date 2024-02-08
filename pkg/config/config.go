@@ -25,6 +25,7 @@ type Port struct {
 	SvcPort             string `mapstructure:"match-svc-port"`
 	AuthSvcPort         string `mapstructure:"auth-svc-port"`
 	NotificationSvcPort string `mapstructure:"notification-svc-port"`
+	ChatSvcPort         string `mapstructure:"chat-svc-port"`
 }
 
 type Config struct {

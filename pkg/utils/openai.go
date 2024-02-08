@@ -28,36 +28,43 @@ func (M *Utils) MakeMatchesByPrefrences(userData *authPb.UserRepsonse, usersData
 
 	}
 
-	// match, err := M.OpenAi(content1, content2)
+	match, err := M.OpenAi(content1, content2)
 
-	// if err != nil {
-	// 	return responses.Result{}, err
-	// }
+	if err != nil {
+		return responses.Result{}, err
+	}
 
-	//return match, nil
-	return responses.Result{
-		Result: []responses.Match{
-			{
-				UserID:     11,
-				Name:       "Ashiq Sabith",
-				MatchScore: 100,
-				Age:        22,
-				Place:      "Kottayam, Kerala",
-			}, {
-				UserID:     5,
-				Name:       "Hisham Cs",
-				MatchScore: 70,
-				Age:        33,
-				Place:      "Trissur, Kerala",
-			}, {
-				UserID:     3,
-				Name:       "Abin V",
-				MatchScore: 60,
-				Age:        23,
-				Place:      "Alappuzha, Kerala",
-			},
-		},
-	}, nil
+	return match, nil
+	// return responses.Result{
+	// 	Result: []responses.Match{
+	// 		{
+	// 			UserID:     12,
+	// 			Name:       "Ashiq Sabith",
+	// 			MatchScore: 100,
+	// 			Age:        22,
+	// 			Place:      "Kottayam, Kerala",
+	// 		}, {
+	// 			UserID:     5,
+	// 			Name:       "Hisham Cs",
+	// 			MatchScore: 70,
+	// 			Age:        33,
+	// 			Place:      "Trissur, Kerala",
+	// 		}, {
+	// 			UserID:     3,
+	// 			Name:       "Abin V",
+	// 			MatchScore: 60,
+	// 			Age:        23,
+	// 			Place:      "Alappuzha, Kerala",
+	// 		},
+	// 		{
+	// 			UserID:     2,
+	// 			Name:       "Priya",
+	// 			MatchScore: 60,
+	// 			Age:        23,
+	// 			Place:      "Mumbai, Maharashtra",
+	// 		},
+	// 	},
+	// }, nil
 }
 
 func (O *Utils) OpenAi(content1, content2 string) (responses.Result, error) {

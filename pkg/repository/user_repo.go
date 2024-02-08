@@ -97,3 +97,19 @@ func (U *UserRepo) GetUserPhotoByID(id int) (photo string, err error) {
 
 	return photo, nil
 }
+
+func (U *UserRepo) ChangeIntrestRequestStatus(id int, status string) (domain.IntrestRequests, error) {
+
+	query := "UPDATE intrest_requests SET status=$1 WHERE id=$2 RETURNING sender_id, receiver_id, id"
+
+	var interest domain.IntrestRequests
+
+	err := U.Postgres.Raw(query, status, id).Scan(&interest).Error
+
+	if err != nil {
+		return interest, err
+	}
+
+	return interest, nil
+
+}

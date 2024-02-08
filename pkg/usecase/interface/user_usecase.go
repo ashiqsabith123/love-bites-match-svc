@@ -11,4 +11,5 @@ type UserUsecase interface {
 	FindMatches(req *pb.UserIdRequest) (responses.Result, error)
 	CreateIntrest(req *pb.IntrestRequest) error
 	GetIntrests(req *pb.UserIdRequest) ([]responses.Interests, error)
+	ChangeIntrestRequestStatus(req *pb.ChangeInterestRequest) error
 }

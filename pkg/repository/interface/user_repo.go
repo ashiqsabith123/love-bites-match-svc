@@ -13,4 +13,5 @@ type UserRepo interface {
 	CreateIntrestsAndReturnID(intrest domain.IntrestRequests) (int, error)
 	GetIntrestRequestAndPhotoById(id uint) (userIntrests []responses.Interests, err error)
 	GetUserPhotoByID(id int) (photo string, err error)
+	ChangeIntrestRequestStatus(id int, status string) (domain.IntrestRequests, error)
 }

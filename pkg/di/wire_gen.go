@@ -7,8 +7,9 @@
 package di
 
 import (
-	"github.com/ashiqsabith123/match-svc/pkg/clients/auth"
-	"github.com/ashiqsabith123/match-svc/pkg/clients/notification"
+	"github.com/ashiqsabith123/match-svc/pkg/clients/auth_client"
+	"github.com/ashiqsabith123/match-svc/pkg/clients/chat_client"
+	"github.com/ashiqsabith123/match-svc/pkg/clients/notification_client"
 	"github.com/ashiqsabith123/match-svc/pkg/config"
 	"github.com/ashiqsabith123/match-svc/pkg/db"
 	"github.com/ashiqsabith123/match-svc/pkg/repository"
@@ -25,7 +26,8 @@ func IntializeService(config2 config.Config) service.UserService {
 	intrefacesUtils := utils.NewS3Client(config2)
 	authClient := auth.NewAuthClient(config2)
 	notificationClient := notification.NewNotificationClient(config2)
-	userUsecase := usecase.NewUserUsecase(userRepo, intrefacesUtils, authClient, notificationClient)
+	chatClient := chat.NewChatClient(config2)
+	userUsecase := usecase.NewUserUsecase(userRepo, intrefacesUtils, authClient, notificationClient, chatClient)
 	userService := service.NewUserService(userUsecase)
 	return userService
 }
